@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+const arr = [
+  { name: "Kunal", country: "India" },
+  { name: "Rocky", country: "America" },
+  { name: "lucky", country: "USA" },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Thi is a demo project for the production </h1>
+      <br />
+
+      <button>Click for the user Details</button>
+      <br />
+      <br />
+      <br />
+      <ul>
+        {arr?.length !== 0 ? (
+          arr?.map((item) => {
+            return (
+              <li>
+                <h2>{item?.name}</h2>
+                country name :- {item?.country}
+              </li>
+            );
+          })
+        ) : (
+          <p>Data NO found</p>
+        )}
+      </ul>
     </div>
   );
 }
